@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://dvwplmya4jtce"]
+
+[ext_resource type="Texture2D" uid="uid://4ou2npuuefk8" path="res://asset/aset-rama/run__01.png" id="1_ogyit"]
+[ext_resource type="Texture2D" uid="uid://bh33a6wk7lkc7" path="res://asset/aset-rama/run__03.png" id="2_yqw8s"]
+[ext_resource type="Texture2D" uid="uid://d3h45us8ptpi5" path="res://asset/aset-rama/run__02.png" id="3_qiucl"]
+[ext_resource type="Texture2D" uid="uid://cyjrdtmcq1unw" path="res://asset/aset-rama/attack__01.png" id="4_8ql6m"]
+[ext_resource type="Texture2D" uid="uid://brotdaftljw7m" path="res://asset/aset-rama/attack__02.png" id="5_v8q7j"]
+[ext_resource type="Texture2D" uid="uid://cdgvs6gheryr5" path="res://asset/aset-rama/attack__3.png" id="6_os0wr"]
+[ext_resource type="Texture2D" uid="uid://2hjx8q4mhg88" path="res://asset/aset-rama/dead_001.png" id="7_irh4f"]
+[ext_resource type="Texture2D" uid="uid://cabsn2ds1ro0n" path="res://asset/aset-rama/dead__02.png" id="8_j5mcp"]
+[ext_resource type="Texture2D" uid="uid://km000pfd2ubj" path="res://asset/aset-rama/dead__03.png" id="9_44okb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkrdh"]
+radius = 16.0
+height = 60.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8etd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ogyit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yqw8s")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ogyit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qiucl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yqw8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ogyit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qiucl")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8ql6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v8q7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_os0wr")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_irh4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_j5mcp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_44okb")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_kkrdh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -7)
+scale = Vector2(0.148, 0.1608)
+sprite_frames = SubResource("SpriteFrames_c8etd")
+animation = &"Idle"
+frame_progress = 0.476725

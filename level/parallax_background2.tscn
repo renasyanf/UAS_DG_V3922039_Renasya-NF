@@ -1,0 +1,112 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1itcjh6xvqb6"]
+
+[ext_resource type="Texture2D" uid="uid://cn6yoigj6pyd" path="res://asset/2d-backgrounds/summer/sky.png" id="1_ohw5y"]
+[ext_resource type="Texture2D" uid="uid://c17buoyped4la" path="res://asset/2d-backgrounds/summer/mountains.png" id="2_r8ejc"]
+[ext_resource type="Texture2D" uid="uid://dlo4k2foaws4k" path="res://asset/2d-backgrounds/summer/clouds.png" id="3_ku7ol"]
+[ext_resource type="Texture2D" uid="uid://bmww8d584xktk" path="res://asset/2d-backgrounds/summer/hills.png" id="4_lxaqx"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(4, -68)
+
+[node name="Sky" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(845, 359)
+scale = Vector2(0.392593, 0.327778)
+texture = ExtResource("1_ohw5y")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(4, -68)
+
+[node name="Sky" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(2541, 359)
+scale = Vector2(0.392593, 0.327778)
+texture = ExtResource("1_ohw5y")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+position = Vector2(4, -68)
+
+[node name="Sky" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(4237, 359)
+scale = Vector2(0.392593, 0.327778)
+texture = ExtResource("1_ohw5y")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+position = Vector2(4, -68)
+
+[node name="Sky" type="Sprite2D" parent="ParallaxLayer4"]
+position = Vector2(5901, 357)
+scale = Vector2(0.392593, 0.327778)
+texture = ExtResource("1_ohw5y")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+position = Vector2(4, -68)
+
+[node name="Sky" type="Sprite2D" parent="ParallaxLayer5"]
+position = Vector2(7597, 357)
+scale = Vector2(0.392593, 0.327778)
+texture = ExtResource("1_ohw5y")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="."]
+position = Vector2(4, -68)
+
+[node name="Mountains" type="Sprite2D" parent="ParallaxLayer6"]
+position = Vector2(1734, 332)
+scale = Vector2(0.801852, 0.62963)
+texture = ExtResource("2_r8ejc")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="."]
+position = Vector2(4, -68)
+
+[node name="Mountains" type="Sprite2D" parent="ParallaxLayer7"]
+position = Vector2(4244, 331)
+scale = Vector2(0.626852, 0.62963)
+texture = ExtResource("2_r8ejc")
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="."]
+position = Vector2(4, -68)
+
+[node name="Mountains" type="Sprite2D" parent="ParallaxLayer8"]
+position = Vector2(6798, 331)
+scale = Vector2(0.763889, 0.62963)
+texture = ExtResource("2_r8ejc")
+
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="."]
+position = Vector2(4, -68)
+
+[node name="Clouds" type="Sprite2D" parent="ParallaxLayer9"]
+position = Vector2(1832, 579)
+scale = Vector2(0.614815, 0.618519)
+texture = ExtResource("3_ku7ol")
+
+[node name="ParallaxLayer10" type="ParallaxLayer" parent="."]
+position = Vector2(4, -68)
+
+[node name="Clouds" type="Sprite2D" parent="ParallaxLayer10"]
+position = Vector2(4432, 719)
+scale = Vector2(0.614815, 0.618519)
+texture = ExtResource("3_ku7ol")
+
+[node name="ParallaxLayer11" type="ParallaxLayer" parent="."]
+position = Vector2(4, -68)
+
+[node name="Clouds" type="Sprite2D" parent="ParallaxLayer11"]
+position = Vector2(6978, 699)
+scale = Vector2(0.678704, 0.618519)
+texture = ExtResource("3_ku7ol")
+
+[node name="ParallaxLayer12" type="ParallaxLayer" parent="."]
+position = Vector2(4, -68)
+
+[node name="Hills" type="Sprite2D" parent="ParallaxLayer12"]
+position = Vector2(2736, 158)
+scale = Vector2(1.26852, 0.812963)
+texture = ExtResource("4_lxaqx")
+
+[node name="ParallaxLayer13" type="ParallaxLayer" parent="."]
+position = Vector2(4, -68)
+
+[node name="Hills" type="Sprite2D" parent="ParallaxLayer13"]
+position = Vector2(8648, 13)
+scale = Vector2(1.47407, 1.07778)
+texture = ExtResource("4_lxaqx")

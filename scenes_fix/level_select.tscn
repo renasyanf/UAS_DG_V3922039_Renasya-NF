@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0hoxfl71ixli"]
+
+[ext_resource type="Texture2D" uid="uid://dj7evlf3e7ix0" path="res://asset/panel_fix/Bg.png" id="1_fnufp"]
+[ext_resource type="Script" path="res://scenes_fix/level_select.gd" id="1_t05yq"]
+[ext_resource type="Texture2D" uid="uid://3f64vtmp80mu" path="res://asset/button_fix/level1_normal.png" id="2_57meg"]
+[ext_resource type="Texture2D" uid="uid://dbvf80tfdfacs" path="res://asset/button_fix/level1_hover_select.png" id="3_n6aj2"]
+[ext_resource type="Texture2D" uid="uid://c0i6ebvod67k" path="res://asset/button_fix/level2_normal.png" id="4_6h1jr"]
+[ext_resource type="Texture2D" uid="uid://1qnk1kne5eek" path="res://asset/button_fix/level2_hover_select.png" id="5_a26we"]
+[ext_resource type="AudioStream" uid="uid://cawfi6mkm7mop" path="res://asset/sound/Backsound music gamelan _ esuk _ No copyright.mp3" id="7_t1vfj"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_t05yq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 1151.0
+offset_bottom = 653.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fnufp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 348.5
+offset_top = 228.5
+offset_right = 803.5
+offset_bottom = 427.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="level1_button" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_57meg")
+texture_pressed = ExtResource("3_n6aj2")
+texture_hover = ExtResource("3_n6aj2")
+texture_focused = ExtResource("3_n6aj2")
+stretch_mode = 3
+
+[node name="Separator" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="level2_button" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_6h1jr")
+texture_pressed = ExtResource("5_a26we")
+texture_hover = ExtResource("5_a26we")
+texture_disabled = ExtResource("5_a26we")
+texture_focused = ExtResource("5_a26we")
+stretch_mode = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_t1vfj")
+autoplay = true
+
+[node name="TextureButton" type="TextureButton" parent="AudioStreamPlayer2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="HBoxContainer/level1_button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/level2_button" to="." method="_on_level_2_button_pressed"]

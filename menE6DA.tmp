@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnxiabml437j8"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_ep7qm"]
+[ext_resource type="Texture2D" uid="uid://b3gv8nm5fm8or" path="res://asset/beranda/beranda.png" id="2_l14m4"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_1i3kl"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 9.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ep7qm")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(575.5, 323.625)
+scale = Vector2(1.00087, 0.995)
+texture = ExtResource("2_l14m4")
+
+[node name="PlayButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 410.357
+offset_top = 230.095
+offset_right = 741.357
+offset_bottom = 324.095
+text = "Play"
+icon = SubResource("ImageTexture_1i3kl")
+
+[node name="QuitButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 409.0
+offset_top = 387.0
+offset_right = 740.0
+offset_bottom = 481.0
+text = "Play"
+icon = SubResource("ImageTexture_1i3kl")
+
+[node name="SoundButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 27.0
+offset_top = 27.0
+offset_right = 107.0
+offset_bottom = 103.0
+icon = SubResource("ImageTexture_1i3kl")
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

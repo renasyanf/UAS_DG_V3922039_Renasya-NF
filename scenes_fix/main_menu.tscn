@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://ufipks0svn6y"]
+
+[ext_resource type="Texture2D" uid="uid://craje64nlagjr" path="res://asset/panel_fix/Bg_main.png" id="1_4lxv6"]
+[ext_resource type="Script" path="res://scenes_fix/main_menu.gd" id="1_lclqn"]
+[ext_resource type="Texture2D" uid="uid://d4etpuplvk646" path="res://asset/button_fix/Start_normal.png" id="2_2hlfy"]
+[ext_resource type="Texture2D" uid="uid://qk2eema8yeo5" path="res://asset/button_fix/Start_hover.png" id="3_53pv1"]
+[ext_resource type="Texture2D" uid="uid://b2lcgiehpntg8" path="res://asset/button_fix/quit_normal.png" id="4_7vspe"]
+[ext_resource type="Texture2D" uid="uid://dx4146ppt4u5k" path="res://asset/button_fix/quit_hover.png" id="5_nl5hd"]
+[ext_resource type="AudioStream" uid="uid://cawfi6mkm7mop" path="res://asset/sound/Backsound music gamelan _ esuk _ No copyright.mp3" id="7_au7hf"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lclqn")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_right = 1151.0
+offset_bottom = 650.0
+size_flags_vertical = 2
+texture = ExtResource("1_4lxv6")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 398.0
+offset_top = 171.0
+offset_right = 754.0
+offset_bottom = 479.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Separator"]
+layout_mode = 0
+offset_right = 194.0
+offset_bottom = 186.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Separator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="playbutton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_2hlfy")
+texture_hover = ExtResource("3_53pv1")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Separator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="quitbutton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_7vspe")
+texture_hover = ExtResource("5_nl5hd")
+stretch_mode = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_au7hf")
+autoplay = true
+
+[node name="TextureButton" type="TextureButton" parent="AudioStreamPlayer2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/playbutton" to="." method="_on_playbutton_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/quitbutton" to="." method="_on_quitbutton_pressed"]

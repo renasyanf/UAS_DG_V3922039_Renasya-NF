@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8vudhae68uye"]
+
+[ext_resource type="Texture2D" uid="uid://dj7evlf3e7ix0" path="res://asset/panel_fix/Bg.png" id="1_2vici"]
+[ext_resource type="Script" path="res://scenes_fix/select_diificulty_2.gd" id="1_vstmo"]
+[ext_resource type="Texture2D" uid="uid://d3hes6lqqs6dc" path="res://asset/button_fix/easy_normal.png" id="2_57p5s"]
+[ext_resource type="Texture2D" uid="uid://bxnik4v0f2mvy" path="res://asset/button_fix/easy_hover_and_select.png" id="3_5n7s3"]
+[ext_resource type="Texture2D" uid="uid://vvq87102sqyo" path="res://asset/button_fix/medium_normal.png" id="4_vet12"]
+[ext_resource type="Texture2D" uid="uid://ciofxofian3j7" path="res://asset/button_fix/medium_hover_and_select.png" id="5_e2kvm"]
+[ext_resource type="Texture2D" uid="uid://v2b0rapdqkwb" path="res://asset/button_fix/hard_normal.png" id="6_1ne21"]
+[ext_resource type="Texture2D" uid="uid://bwmiqnxml38ov" path="res://asset/button_fix/hard_hover_and_select.png" id="7_5g7da"]
+[ext_resource type="AudioStream" uid="uid://cawfi6mkm7mop" path="res://asset/sound/Backsound music gamelan _ esuk _ No copyright.mp3" id="8_0gemi"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_vstmo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1151.0
+offset_bottom = 649.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2vici")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 357.5
+offset_top = 98.0
+offset_right = 794.5
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Separator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="easy_1" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_57p5s")
+texture_hover = ExtResource("3_5n7s3")
+texture_focused = ExtResource("3_5n7s3")
+stretch_mode = 3
+
+[node name="Separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="medium_1" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_vet12")
+texture_hover = ExtResource("5_e2kvm")
+texture_focused = ExtResource("5_e2kvm")
+stretch_mode = 3
+
+[node name="Separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="hard_1" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_1ne21")
+texture_hover = ExtResource("7_5g7da")
+texture_focused = ExtResource("7_5g7da")
+stretch_mode = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_0gemi")
+autoplay = true
+
+[node name="TextureButton" type="TextureButton" parent="AudioStreamPlayer2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/easy_1" to="." method="_on_easy_1_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/medium_1" to="." method="_on_medium_1_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/hard_1" to="." method="_on_hard_1_pressed"]
